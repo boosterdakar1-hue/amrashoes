@@ -216,9 +216,16 @@ tr:last-child td{border-bottom:0}
 .st::before{counter-increment:s;content:"0" counter(s);font-family:'Playfair Display',serif;font-size:56px;color:var(--gold3);line-height:1;display:block;margin-bottom:12px}
 .st h3{font-family:Inter,sans-serif;font-size:19px;font-weight:600;margin-bottom:8px}
 .st p{color:var(--muted);font-size:15px}
-.pay{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
-.pay span{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 20px;font-weight:500;font-size:14px;display:flex;gap:8px;align-items:center}
-.pay .i{color:var(--gold);width:18px;height:18px}
+.pays{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pm{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;text-align:center;transition:.3s}
+.pm:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:var(--gold2)}
+.pl{height:84px;display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px}
+.pl img{max-height:64px;max-width:150px;width:auto;height:auto}
+.pl img.c{max-height:34px;max-width:78px}
+.pm h3{font-family:Inter,sans-serif;font-size:18px;font-weight:600;margin-bottom:6px}
+.pm p{font-size:14.5px;color:var(--muted)}
+@media(max-width:980px){.pays{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.pays{grid-template-columns:1fr}}
 
 /* faq */
 .faqa{background:#fff;border-block:1px solid var(--line)}
@@ -435,7 +442,7 @@ footer{background:#0d0b08;color:#a99a78;padding:60px 0 28px}
       <a href="#conseils">Conseils</a>
       <a href="#tailles">Pointures</a>
       <a href="#livraison">Livraison</a>
-      <a href="#faq">FAQ</a>
+      <a href="#paiement">Paiement</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="acts">
@@ -455,6 +462,7 @@ footer{background:#0d0b08;color:#a99a78;padding:60px 0 28px}
   <a class="l" href="#conseils">Conseils</a>
   <a class="l" href="#tailles">Pointures</a>
   <a class="l" href="#livraison">Livraison</a>
+  <a class="l" href="#paiement">Paiement</a>
   <a class="l" href="#faq">FAQ</a>
   <a class="l" href="#contact">Contact</a>
   <a class="btn btn-wa wa" data-msg="Bonjour AMRA Shoes, je souhaite des informations." href="#"><svg class="i f"><use href="#i-wa"/></svg>Écrire sur WhatsApp</a>
@@ -583,12 +591,19 @@ footer{background:#0d0b08;color:#a99a78;padding:60px 0 28px}
       <div class="st rv d1"><h3>Confirmez sur WhatsApp</h3><p>Votre commande arrive pré-remplie sur WhatsApp. On confirme la disponibilité et le prix avec vous.</p></div>
       <div class="st rv d2"><h3>Recevez vos chaussures</h3><p>Livraison gratuite à Dakar et environs, payante ailleurs au Sénégal, possible à l'international.</p></div>
     </div>
-    <div class="pay rv">
-      <span><svg class="i"><use href="#i-wallet"/></svg>Mobile Money</span>
-      <span><svg class="i"><use href="#i-wallet"/></svg>Carte bancaire</span>
-      <span><svg class="i"><use href="#i-wallet"/></svg>Solutions locales</span>
-      <span><svg class="i"><use href="#i-globe"/></svg>Livraison internationale</span>
+  </div>
+</section>
+
+<section id="paiement">
+  <div class="wrap">
+    <div class="sh rv"><span class="eyebrow">Paiement</span><h2>Payez comme vous voulez</h2><p>Plusieurs moyens de paiement, confirmés avec vous sur WhatsApp avant toute validation.</p></div>
+    <div class="pays">
+      <div class="pm rv"><div class="pl"><img src="img/pay/wave.png" alt="Wave"></div><h3>Wave</h3><p>Payez depuis votre application Wave, simplement et sans frais cachés.</p></div>
+      <div class="pm rv d1"><div class="pl"><img src="img/pay/orange-money.svg" alt="Orange Money"></div><h3>Orange Money</h3><p>Réglez avec votre compte Orange Money en quelques secondes.</p></div>
+      <div class="pm rv d2"><div class="pl"><img class="c" src="img/pay/visa.svg" alt="Visa"><img class="c" src="img/pay/mastercard.svg" alt="Mastercard"></div><h3>Carte bancaire</h3><p>Visa et Mastercard acceptées, pour vos achats ici comme depuis l'étranger.</p></div>
+      <div class="pm rv d3"><div class="pl"><svg class="i" style="width:44px;height:44px;color:var(--gold)"><use href="#i-truck"/></svg></div><h3>Paiement à la livraison</h3><p>Payez en main propre à la réception de votre commande (selon la zone, à confirmer sur WhatsApp).</p></div>
     </div>
+    <p class="note" style="text-align:center;margin-top:22px">Les logos Wave, Orange Money, Visa et Mastercard appartiennent à leurs propriétaires respectifs.</p>
   </div>
 </section>
 
@@ -597,7 +612,7 @@ footer{background:#0d0b08;color:#a99a78;padding:60px 0 28px}
     <div class="sh rv"><span class="eyebrow">Questions</span><h2>Questions fréquentes</h2></div>
     <div class="faq rv">
       <details open><summary>La livraison est-elle vraiment gratuite ?</summary><p>Oui, à Dakar et environs. Ailleurs au Sénégal, la livraison est payante ; nous vous indiquons le tarif et le délai avant de valider. La livraison est aussi possible en Afrique et à l'international.</p></details>
-      <details><summary>Comment payer ma commande ?</summary><p>Par Mobile Money, carte bancaire ou autres solutions locales. Nous confirmons ensemble le moyen de paiement sur WhatsApp.</p></details>
+      <details><summary>Comment payer ma commande ?</summary><p>Par Wave, Orange Money, carte bancaire (Visa, Mastercard) ou en paiement à la livraison selon la zone. Nous confirmons ensemble le moyen de paiement sur WhatsApp avant toute validation.</p></details>
       <details><summary>Et si la pointure ne me va pas ?</summary><p>Un échange est possible selon conditions. Utilisez le calculateur de pointure ou écrivez-nous : on vous conseille selon votre pied (fin, normal ou large).</p></details>
       <details><summary>Quels sont les prix ?</summary><p>Les prix sont communiqués sur WhatsApp au moment de la commande, avec la disponibilité de la pointure choisie.</p></details>
       <details><summary>Puis-je essayer en boutique ?</summary><p>Oui : Centre Commercial Touba Sandaga N°2274. Appelez-nous avant de passer pour vérifier la disponibilité.</p></details>
